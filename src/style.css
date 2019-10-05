@@ -73,7 +73,7 @@ body {
 }
 
 #menubar ul li {
-   width: 150px;
+   width: 20%;
    text-align: center;
 }
 
@@ -86,7 +86,7 @@ body {
    border: 1px solid #869ef0;
    padding-top: 5%;
    padding-bottom: 5%;
-   font-size:20px;
+   font-size:3vw;
    overflow: auto;
 }
 
@@ -769,10 +769,25 @@ body {
    position: absolute;
    height: 10vw;
    width: 10vw;
-   background: rgba(255, 255, 255, 0.4);
+   background: rgba(255, 0, 0, 0.7);
+   box-shadow: 0 0 2vw black;
+   border-radius: 50%;
    top: 50%;
    left: 50%;
    transform: translateX(-50%) translateY(-50%);
+   z-index: 10;
+   overflow: hidden;
+}
+
+.fullscreen{
+   position: absolute;
+   height: 10vw;
+   width: 10vw;
+   background: rgba(255, 0, 0, 0.7);
+   border-radius: 11%;
+   box-shadow: 0 0 2vw white;
+   bottom: 0;
+   right: 0;
    z-index: 10;
    overflow: hidden;
 }

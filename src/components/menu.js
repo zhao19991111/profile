@@ -8,54 +8,6 @@ class Menu extends React.Component{
         }
     }
 
-    componentDidMount() {
-        this.timer = setInterval(()=>{
-            var w = window.innerWidth;
-            var n_toShow = [];
-            if (w > 800)
-            {
-                for(let i= 0; i < 5; i ++)
-                document.getElementsByClassName("menulist")[i].style.display = "block";
-                n_toShow = [];
-            }
-            else if (w > 700) {
-                for(let i= 0; i < 4; i ++)
-                document.getElementsByClassName("menulist")[i].style.display = "block";
-
-                document.getElementsByClassName("menulist")[4].style.display = "none";
-                n_toShow.push(document.getElementsByClassName("menulist")[4].innerHTML)
-            }
-            else if (w > 500) {
-                for(let i= 3; i < 5; i ++)
-                {
-                    document.getElementsByClassName("menulist")[i].style.display = "none";
-                    n_toShow.push(document.getElementsByClassName("menulist")[i].innerHTML)
-                }
-                document.getElementsByClassName("menulist")[0].style.display = "block";
-                document.getElementsByClassName("menulist")[1].style.display = "block"; 
-                document.getElementsByClassName("menulist")[2].style.display = "block"; 
-            } 
-            else if (w > 400){
-                for(let i= 2; i < 5; i ++)
-                {
-                   document.getElementsByClassName("menulist")[i].style.display = "none";
-                   n_toShow.push(document.getElementsByClassName("menulist")[i].innerHTML)
-                }
-                document.getElementsByClassName("menulist")[0].style.display = "block"; 
-            }
-            else{
-                for(let i= 1; i < 5; i ++)
-                {
-                   document.getElementsByClassName("menulist")[i].style.display = "none";
-                   n_toShow.push(document.getElementsByClassName("menulist")[i].innerHTML)
-                }
-            }
-            this.setState({
-                toShow: n_toShow,
-            })
-        }, 100);
-    }
-
     render() {
         return(
             <div id="menubar">

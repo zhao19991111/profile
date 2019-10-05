@@ -17,6 +17,19 @@ class Video extends React.Component{
         }  
     }
 
+    extend(ind){
+        var elem = document.getElementsByClassName("m_videos")[ind]
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+          } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+          }
+    }
+
     control(ind){
         var newstatus = this.state.onPlay
         newstatus[ind] = !newstatus[ind]
@@ -45,34 +58,37 @@ class Video extends React.Component{
                     AnyGuess (Mini Program)
                 </div>
                 <div className="video_content">
-                    <video className="m_videos" data-ind={0} width="50%" height="auto" loop preload="true" >
+                    <video className="m_videos" data-ind={0} width="40%" height="auto" loop preload="true" >
                         <source src={this.props.videos[0][0]} type="video/mp4"/>
                         <source src={this.props.videos[0][1]} type="video/webm"/>
                         Your browser does not support the video tag
                     </video>
                     <div className="pause" onClick={this.control.bind(this, 0)}><img className="sign" src={this.props.play} alt="PLAY"/></div>
+                    <div className="fullscreen" onClick={this.extend.bind(this, 0)}><img className="sign" src={this.props.fullscreen} alt="PLAY" /></div>
                 </div>
                 <div className="video_title">
                     AnyHelper (Official Account)
                 </div>
                 <div className="video_content">
-                    <video className="m_videos" data-ind={1} width="50%" height="auto" loop preload="true" >
+                    <video className="m_videos" data-ind={1} width="40%" height="auto" loop preload="true" >
                         <source src={this.props.videos[1][0]} type="video/mp4"/>
                         <source src={this.props.videos[1][1]} type="video/webm"/>
                         Your browser does not support the video tag
                     </video>
                     <div className="pause" onClick={this.control.bind(this, 1)}><img className="sign" src={this.props.play} alt="PLAY" /></div>
+                    <div className="fullscreen" onClick={this.extend.bind(this, 1)}><img className="sign" src={this.props.fullscreen} alt="PLAY" /></div>
                 </div>
                 <div className="video_title">
                     Rocket Launch
                 </div>
                 <div className="video_content">
-                    <video className="m_videos" data-ind={2} width="50%" height="auto" loop preload="true" >
+                    <video className="m_videos" data-ind={2} width="40%" height="auto" loop preload="true" >
                         <source src={this.props.videos[2][0]} type="video/mp4"/>
                         <source src={this.props.videos[2][1]} type="video/webm"/>
                         Your browser does not support the video tag
                     </video>
                     <div className="pause" onClick={this.control.bind(this, 2)}><img className="sign" src={this.props.play} alt="PLAY"/></div>
+                    <div className="fullscreen" onClick={this.extend.bind(this, 2)}><img className="sign" src={this.props.fullscreen} alt="PLAY" /></div>
                 </div>
                 <div className="video_title">
                     MinePhone Demonstration
@@ -83,7 +99,8 @@ class Video extends React.Component{
                         <source src={this.props.videos[3][1]} type="video/webm"/>
                         Your browser does not support the video tag
                     </video>
-                    <div className="pause" onClick={this.control.bind(this, 2)}><img className="sign" src={this.props.play} alt="PLAY"/></div>
+                    <div className="pause" onClick={this.control.bind(this, 3)}><img className="sign" src={this.props.play} alt="PLAY"/></div>
+                    <div className="fullscreen" onClick={this.extend.bind(this, 3)}><img className="sign" src={this.props.fullscreen} alt="PLAY" /></div>
                 </div>
             </div>
         )

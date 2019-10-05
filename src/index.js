@@ -39,6 +39,7 @@ import pic13 from './resources/pic13.jpg'
 import pic14 from './resources/pic14.jpg'
 import pic15 from './resources/pic15.jpg'
 import play from './resources/play.jpg'
+import fullscreen from './resources/fullscreen.jpg'
 import video1 from './resources/demonstration.mp4'
 import video2 from './resources/demonstration.webm'
 import video3 from './resources/demonstration2.mp4'
@@ -242,7 +243,7 @@ class App extends React.Component{
             <Skill keyword={this.props.skills}/>
             <Slide myData={this.props.myData}/>
             <Projects projects={this.props.projects}/>
-            <Video videos={this.props.videos} play={this.props.playSign}/>
+            <Video videos={this.props.videos} play={this.props.playSign} fullscreen={this.props.fullscreenSign}/>
             <Comment comments={this.state.comments} record={this.addLikes.bind(this)} submit={this.addComment.bind(this)}/>
         </div>);
     }
@@ -308,4 +309,5 @@ myData={{
     picture: [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic13, pic14, pic15]
 }}
 playSign={play}
+fullscreenSign={fullscreen}
 keywords={["Programming","Travel","Food","Hackathon","F1","Badminton","Movies","3D Design","Poem","Physics","Hiking","Volunteering","PC games","Blog","Photography","Calligraphy", "Philosophy", "UCLA", "Math", "Quick Learner","Caring", "Optimistic", "Resilient", "Energetic","Confident","Hardworking", "Creative", "Curious", "Funny"]}/>, document.getElementById('root'));
