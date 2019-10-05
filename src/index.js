@@ -250,7 +250,7 @@ class App extends React.Component{
 }
 
 ReactDOM.render(<App titleTexts={["Feel free to move around!", "Welcome to my website!"]}
-menuText={["Intro","Photos","Projects","Vidoes","Comment"]}
+menuText={["Intro","Photos","Projects","Videos","Comment"]}
 targetIds={["#intro","#slide","#projects","#video","#commentArea"]}
 introduction="Hi, visitor! I am Ricky Zhao, an Applied Mathematics student at UCLA. I love programming and enjoy the process of interacting with others via my codes. Wish you have a great time viewing by website! "
 buttonText={["Check my resume here","Hide my resume"]}
