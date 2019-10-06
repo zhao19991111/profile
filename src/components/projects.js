@@ -63,7 +63,6 @@ class Projects extends React.Component{
 
     collapse(ind)
     {
-        console.log("here")
         document.getElementsByClassName("project_desc")[ind].style.animationName = "collapse";
         document.getElementsByClassName("project_title")[ind].style.animationName = "disappear"
         document.getElementsByClassName("project_detail")[ind].style.animationName = "disappear"
@@ -81,7 +80,6 @@ class Projects extends React.Component{
         }
         else{
             setTimeout(()=>{
-                console.log("col")
                 this.collapse(ind)
             },1500)
         }
