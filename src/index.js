@@ -47,7 +47,7 @@ import video5 from './resources/demonstration3.mp4'
 import video4 from './resources/demonstration4.mp4'
 import $ from 'jquery'
 
-const HOSTID = "http://localhost:5050/"
+const HOSTID = "http://49.235.49.48:5050/"
 
 class App extends React.Component{
     constructor(){
@@ -210,7 +210,6 @@ class App extends React.Component{
                 i--;
             }
         }
-        console.log(start, end)
         if (start!==-1 && end!==-1)
         {
             var op = 0

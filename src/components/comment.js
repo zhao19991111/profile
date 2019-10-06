@@ -10,7 +10,7 @@ class Comment extends React.Component {
         };
     }
 
-    UNSAFE_componentWillReceiveProps({comments})
+    componentWillReceiveProps({comments})
     {
         this.setState({
             comments: comments
@@ -32,10 +32,9 @@ class Comment extends React.Component {
                     <p className="text">{this.state.comments[i].content}</p>
                 </div>
                 <div style={{ float: 'right', }}>
-                    <button className="like"
-                        data-ind={i}
+                    <button className="like" data-ind={i}
                         onClick={this.add.bind(this)}>
-                        <span role="img">❤️</span>  {this.state.comments[i].likes}
+                        <span role="img" data-ind={i}>❤️</span>  {this.state.comments[i].likes}
                     </button><br/>
                     <p>{this.state.comments[i].date + " by "+this.state.comments[i].user.nickname + "  ||"}</p>
                 </div>
