@@ -481,9 +481,19 @@ body {
    font-size: 3vw;
    color: rgb(120, 132, 255);
    top: 0vw;
+   left: 40vw;
+   animation: group7 20s linear infinite;
+}
+
+
+#skill14{
+   font-size: 3vw;
+   color: rgb(120, 132, 255);
+   top: 0vw;
    left: 10vw;
    animation: group7 20s linear infinite;
 }
+
 
 #skill15{
    font-size: 3vw;

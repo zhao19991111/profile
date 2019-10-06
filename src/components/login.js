@@ -16,7 +16,7 @@ class Login extends React.Component{
                    <div className="entries"><label>Username: </label><input id="username" maxLength="15" type="text"/></div>
                    <div className="entries"><label>Nickname: </label><input id="nickname"  maxLength="15" type="text"/></div>
                    <p id="loginWarning"></p>
-                   <button className="submitBtn2" onClick={this.props.submit.bind(this)}>Sumbit</button>
+                   <button className="submitBtn2" onClick={this.props.submit.bind(this)}>Submit</button>
                 </div>
                 <button id="exit" onClick={this.props.hide}>✕</button>
             </div>
