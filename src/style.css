@@ -17,6 +17,8 @@ body {
   font-weight: bold;
   overflow: hidden;
   margin: 0;
+  margin-bottom: 1px;
+  text-shadow: 0.3vw 0.3vw black;
 }
 
 #title {
@@ -74,25 +76,29 @@ body {
 
 #menubar ul li {
    width: 20%;
+   height: 4vw;
    text-align: center;
 }
 
 #menubar ul li a {
    display: block;
+   box-sizing: border-box;
    width: 100%;
-   background: linear-gradient(90deg, rgb(1, 35, 80), rgb(113, 171, 236));;
+   background: rgb(69, 88, 107);
    text-decoration: none;
    color: white;
-   border: 1px solid #869ef0;
    padding-top: 5%;
    padding-bottom: 5%;
    font-size:3vw;
    overflow: auto;
+   transition: ease-in-out 0.5s;
 }
 
 #menubar ul li a:hover{
-   background: rgb(1, 35, 80);
-   color: yellow;
+   font-size: 3.5vw;
+   background: rgb(0, 0, 0);
+   color: rgb(187, 255, 0);
+   border-radius: 0 0 1vw 1vw;
 }
 
 #intro {
@@ -779,8 +785,22 @@ body {
    position: absolute;
    height: 10vw;
    width: 10vw;
-   background: rgba(255, 0, 0, 0.7);
-   box-shadow: 0 0 2vw black;
+   background: rgba(21, 83, 234, 0.7);
+   box-shadow: 0 0 1vw rgba(21, 83, 234, 0.7);
+   border-radius: 50%;
+   top: 50%;
+   left: 50%;
+   transform: translateX(-50%) translateY(-50%);
+   z-index: 10;
+   overflow: hidden;
+}
+
+.pause:hover{
+   position: absolute;
+   height: 10vw;
+   width: 10vw;
+   background: rgba(255, 255, 255, 0.7);
+   box-shadow: 0 0 1vw white;
    border-radius: 50%;
    top: 50%;
    left: 50%;
@@ -793,9 +813,22 @@ body {
    position: absolute;
    height: 10vw;
    width: 10vw;
-   background: rgba(255, 0, 0, 0.7);
+   background: rgba(21, 83, 234, 0.7);
    border-radius: 11%;
-   box-shadow: 0 0 2vw white;
+   box-shadow: 0 0 1vw rgba(21, 83, 234, 0.7);
+   bottom: 0;
+   right: 0;
+   z-index: 10;
+   overflow: hidden;
+}
+
+.fullscreen:hover{
+   position: absolute;
+   height: 10vw;
+   width: 10vw;
+   background: rgba(255, 255, 255, 0.7);
+   border-radius: 11%;
+   box-shadow: 0 0 1vw white;
    bottom: 0;
    right: 0;
    z-index: 10;
@@ -847,7 +880,7 @@ body {
 
 .like:hover {
    background-color: rgb(120, 132, 255);
-   color: rgb(87, 155, 233);
+   color: white;
    padding-top: 1%;
    padding-bottom: 1%;
    float: right;
