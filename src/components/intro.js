@@ -30,10 +30,10 @@ class Intro extends React.Component{
         setInterval(this.printLetter.bind(this), 100);
         var audio = new Audio (this.props.voice)
         audio.preload = "metadata"
-        audio = this.amplifyMedia(audio, 5).media
+        var amp = this.amplifyMedia(audio, 5)
         audio.muted = false
         this.setState({
-            audio: audio
+            audio: amp
         })
     }
 
@@ -61,7 +61,8 @@ class Intro extends React.Component{
            this.setState({
                isPlaying: true
            })
-           audio.play()
+           audio.context.resume()
+           audio.media.play()
            setTimeout(()=>{this.setState({
                isPlaying: false
            })}, audio.duration* 1000)
