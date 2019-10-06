@@ -76,7 +76,6 @@ body {
 
 #menubar ul li {
    width: 20%;
-   height: 4vw;
    text-align: center;
 }
 
@@ -109,16 +108,16 @@ body {
 }
 
 #introText {
-   max-width: 60vw;
+   max-width: 65vw;
    display: flex;
    margin-top: auto;
    margin-bottom: auto;
    color: white;
    font-weight: normal;
-   font-size: 3vw;
+   font-size: 2.5vw;
    background: rgb(77, 77, 77);
-   padding: 20px;
-   border-radius: 20px;
+   padding: 2vw;
+   border-radius: 2vw;
 }
 
 #avatar {
