@@ -28,7 +28,6 @@ class Intro extends React.Component{
 
     componentDidMount() {
         setInterval(this.printLetter.bind(this), 100);
-        setInterval(()=>{console.log(this.state.isPlaying)}, 1000)
         var audio = new Audio (this.props.voice)
         audio.preload = "metadata"
         audio = this.amplifyMedia(audio, 5).media
@@ -68,7 +67,7 @@ class Intro extends React.Component{
            })}, audio.duration* 1000)
         } 
     }
-    
+
     render(){
         return(
             <div id="intro">
