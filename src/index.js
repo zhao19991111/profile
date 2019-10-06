@@ -45,6 +45,7 @@ import video2 from './resources/demonstration.webm'
 import video3 from './resources/demonstration2.mp4'
 import video5 from './resources/demonstration3.mp4'
 import video4 from './resources/demonstration4.mp4'
+import voice from './resources/intro.mp3'
 import $ from 'jquery'
 
 const HOSTID = "https://cors-anywhere.herokuapp.com/http://49.235.49.48:5050/"
@@ -237,7 +238,7 @@ class App extends React.Component{
             <Login submit={this.login.bind(this)} hide={this.hide.bind(this)}/>
             <Title phrases={this.props.titleTexts}/>
             <Menu menuText={this.props.menuText} target={this.props.targetIds}/>
-            <Intro introduction={this.props.introduction}/>
+            <Intro introduction={this.props.introduction} voice={this.props.introVoice}/>
             <Info keyword={this.props.keywords}/>
             <Skill keyword={this.props.skills}/>
             <Slide myData={this.props.myData}/>
@@ -309,4 +310,5 @@ myData={{
 }}
 playSign={play}
 fullscreenSign={fullscreen}
+introVoice = {voice}
 keywords={["Programming","Travel","Food","Hackathon","F1","Badminton","Movies","3D Design","Poem","Physics","Hiking","Volunteering","PC games","Blog","Photography","Calligraphy", "Philosophy", "UCLA", "Math", "Quick Learner","Caring", "Optimistic", "Resilient", "Energetic","Confident","Hardworking", "Creative", "Curious", "Funny"]}/>, document.getElementById('root'));

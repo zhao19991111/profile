@@ -5,12 +5,37 @@ class Intro extends React.Component{
         super();
         this.state={
            introText: null,
-           pos: 0
+           pos: 0,
+           isPlaying: false
         }
+    }
+
+    amplifyMedia(mediaElem, multiplier) {
+        var context = new (window.AudioContext || window.webkitAudioContext),
+            result = {
+              context: context,
+              source: context.createMediaElementSource(mediaElem),
+              gain: context.createGain(),
+              media: mediaElem,
+              amplify: function (multiplier) { result.gain.gain.value = multiplier; },
+              getAmpLevel: function () { return result.gain.gain.value; }
+            };
+        result.source.connect(result.gain);
+        result.gain.connect(context.destination);
+        result.amplify(multiplier);
+        return result;
     }
 
     componentDidMount() {
         setInterval(this.printLetter.bind(this), 100);
+        setInterval(()=>{console.log(this.state.isPlaying)}, 1000)
+        var audio = new Audio (this.props.voice)
+        audio.preload = "metadata"
+        audio = this.amplifyMedia(audio, 5).media
+        audio.muted = false
+        this.setState({
+            audio: audio
+        })
     }
 
     printLetter() {
@@ -30,10 +55,25 @@ class Intro extends React.Component{
         }
     }
 
+    play(){  
+        if (!this.state.isPlaying)
+        {
+           var audio = this.state.audio
+           this.setState({
+               isPlaying: true
+           })
+           audio.play()
+           console.log(audio.duration)
+           setTimeout(()=>{this.setState({
+               isPlaying: false
+           })}, audio.duration* 1000)
+        } 
+    }
+
     render(){
         return(
             <div id="intro">
-                <div id="avatar"></div>
+                <div id="avatar" onClick={this.play.bind(this)}></div>
                 <div id="introText">
                     {this.state.introText}
                 </div>
