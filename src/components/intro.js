@@ -63,13 +63,12 @@ class Intro extends React.Component{
                isPlaying: true
            })
            audio.play()
-           console.log(audio.duration)
            setTimeout(()=>{this.setState({
                isPlaying: false
            })}, audio.duration* 1000)
         } 
     }
-
+    
     render(){
         return(
             <div id="intro">
