@@ -9,7 +9,8 @@ class Projects extends React.Component{
             descarr: [],
             posarr: [],
             isEntered: [false, false, false],
-            isStretched: [false, false, false]
+            isStretched: [false, false, false],
+            currentSlide: -1
         }
     }
 
@@ -36,13 +37,19 @@ class Projects extends React.Component{
         this.expand(e)
         var ind = e.target.dataset.ind
         var slide = document.getElementsByClassName("roll")[ind]
-        slide.style.animationName = "play"
         if (!this.state.isEntered[ind])
         {
+            if (this.state.currentSlide !== -1)
+            {
+                console.log(this.state.currentSlide)
+                this.shrink(this.state.currentSlide)
+            }
+            slide.style.animationName = "play"
             var status = this.state.isEntered
             status[ind] = true;
             this.setState({
-                isEntered: status
+                isEntered: status,
+                currentSlide: ind
             })
         }
     }
@@ -70,10 +77,19 @@ class Projects extends React.Component{
         setTimeout(()=>{isStretched[ind] = false}, 1500)
     }
 
-    shrink(e)
+    shrink(ind)
     {
-        e.stopPropagation()
-        var ind = e.target.dataset.ind
+        if (!this.state.isEntered[ind])
+        {
+            return;
+        }
+        else{
+            var isEntered = this.state.isEntered
+            isEntered[ind] = false;
+            this.setState({
+                isEntered: isEntered
+            })
+        }
         if (this.state.isStretched[ind])
         {
           this.collapse(ind)
@@ -99,7 +115,7 @@ class Projects extends React.Component{
                 imgList.push(ele)
             }
             toShow.push(
-                <div key={i} data-ind={i} className="project" onMouseLeave={this.shrink.bind(this)}  onMouseOver={this.start.bind(this)}>
+                <div key={i} data-ind={i} className="project" onTouchStart={this.start.bind(this)} onMouseEnter={this.start.bind(this)}>
                     <div className="project_desc" key={i} data-ind={i}>
                        <p className="project_title" data-ind={i}>{texts[i]}</p>
                        <div className="project_detail" data-ind={i}>{descs[i]}</div>

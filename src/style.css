@@ -96,7 +96,7 @@ body {
    transition: ease-in-out 0.5s;
 }
 
-#menubar ul li a:hover{
+#menubar ul li a:hover, #menubar ul li a:focus{
    font-size: 3.5vw;
    background: rgb(0, 0, 0);
    color: rgb(187, 255, 0);
@@ -752,7 +752,7 @@ body {
    color: white;
 }
 
-#display_btn:hover{
+#display_btn:hover, #display_btn:focus{
    border: none;
    width: 100%;
    padding: 1vw;
@@ -797,7 +797,7 @@ body {
    overflow: hidden;
 }
 
-.pause:hover{
+.pause:hover, .pause:focus{
    position: absolute;
    height: 10vw;
    width: 10vw;
@@ -824,7 +824,7 @@ body {
    overflow: hidden;
 }
 
-.fullscreen:hover{
+.fullscreen:hover,.fullscreen:focus{
    position: absolute;
    height: 10vw;
    width: 10vw;
@@ -880,7 +880,7 @@ body {
    overflow: auto;
 }
 
-.like:hover {
+.like:hover, .like:focus {
    background-color: rgb(120, 132, 255);
    color: white;
    padding-top: 1%;
@@ -942,7 +942,7 @@ body {
    font-size: 3vw;
 }
 
-#exit:hover{
+#exit:hover, #exit:focus{
    position: absolute;
    right: 0;
    top: 0;
@@ -1018,7 +1018,7 @@ body {
    overflow: hidden;
 }
 
-.submitBtn2:hover{
+.submitBtn2:hover, .submitBtn2:focus{
    width: 70%;
    height: 4vw;
    color: black;
