@@ -72,7 +72,7 @@ class Intro extends React.Component{
     render(){
         return(
             <div id="intro">
-                <div id="avatar" onClick={this.play.bind(this)}></div>
+                <div id="avatar" onTouchStart={this.play.bind(this)} onClick={this.play.bind(this)}></div>
                 <div id="introText">
                     {this.state.introText}
                 </div>
