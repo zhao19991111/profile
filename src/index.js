@@ -252,7 +252,7 @@ class App extends React.Component{
 ReactDOM.render(<App titleTexts={["Feel free to move around!", "Welcome to my website!"]}
 menuText={["Intro","Photos","Projects","Videos","Comment"]}
 targetIds={["#intro","#slide","#projects","#video","#commentArea"]}
-introduction="Hi, vistor! I am Ricky Zhao, an Applied Math student at UCLA who is passionated about programming and will be a CS major next quarter. Hope this dynamic and interative website will introduce to you more about my life and experience! Have fun here!"
+introduction="Welcome, my vistor! I am Ricky Zhao, a Computer Science student at UCLA who is passionated about full stack development and machine learning. Hope this interative website will get you know more about my life and experience! Have fun!"
 buttonText={["Check my resume here","Hide my resume"]}
 skills={["JavaScript","C++","Python","HTML5","CSS", "React.js", "Node.js", "Web.py", "MySQL", "Ajax", "Redis", "Celery", "Linux", "Github", "Fusion 360", "Solidworks", "Octave", "Mathematica", "Nginx", "Cron","Shell","VScode","Soldering","MATLAB", "Wxml", "Wxss", "Firebase", "Data Analysis","WeChat Dev"]}
 projects={
