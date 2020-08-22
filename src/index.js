@@ -48,7 +48,7 @@ import video4 from './resources/demonstration4.mp4'
 import voice from './resources/intro.mp3'
 import $ from 'jquery'
 
-const HOSTID = "https://cors-anywhere.herokuapp.com/http://49.235.49.48:5050/"
+const HOSTID = "https://cors-anywhere.herokuapp.com/http://49.235.49.48:10050/"
 
 class App extends React.Component{
     constructor(){
